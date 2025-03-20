@@ -1,0 +1,79 @@
+$primary-color: #ff7eb3;
+$secondary-color: #ff4d6d;
+$background-gradient: linear-gradient(to right, #6a11cb, #2575fc);
+$container-bg: rgba(255, 255, 255, 0.1);
+$font-family: Arial, sans-serif;
+$transition-speed: 0.3s;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  background: $background-gradient;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background: $container-bg;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 80%;
+  padding: 10px;
+  background: $primary-color;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background $transition-speed;
+  
+  &:hover {
+    background: $secondary-color;
+  }
+}
+
+.result {
+  margin-top: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  
+  &.show {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+}

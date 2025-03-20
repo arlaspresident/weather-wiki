@@ -4,13 +4,15 @@
   "description": "",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "jsdoc": "jsdoc src -d docs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.14.1"
+    "@parcel/transformer-sass": "^2.14.1",
+    "jsdoc": "^4.0.4"
   }
 }
