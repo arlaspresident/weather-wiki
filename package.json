@@ -14,6 +14,7 @@
   "devDependencies": {
     "@parcel/transformer-sass": "^2.14.1",
     "jsdoc": "^4.0.4",
-    "parcel": "^2.14.2"
+    "parcel": "^2.14.2",
+    "svgo": "^3.3.2"
   }
 }
