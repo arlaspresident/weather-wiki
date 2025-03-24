@@ -79,6 +79,6 @@ async function getWiki(city) {
     `;
     wikiDiv.classList.add("show");
   } catch (error) {
-    wikiDiv.innerHTML = "Kunde inte hämta Wikipedia-information.";
+    wikiDiv.innerHTML = "Kunde inte hämta Wikipedia information.";
   }
 }
