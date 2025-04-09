@@ -7,8 +7,17 @@
   <link rel="stylesheet" href="./style.scss">
 </head>
 <body>
+  <header>
+    <div class="header-inner">
+      <h1 class="logo">🌤️ Wikiväder</h1>
+      <p class="tagline">Din väder- och faktakälla på ett ställe</p>
+      <span id="greeting" class="greeting"></span>
+    </div>
+  </header>
+  
+  <main>
   <div class="container">
-    <h1>Wikiväder</h1>
+    <h1>Vad händer i...</h1>
     
     <div class="input-group">
       <input type="text" id="city" placeholder="Skriv in en stad...">
@@ -18,6 +27,7 @@
     <div id="weather" class="result"></div>
     <div id="wiki" class="result"></div>
   </div>
+  </main>
 
   <footer>
     <a href="../docs/index.html" target="_blank">Öppna JSDoc-dokumentation</a>

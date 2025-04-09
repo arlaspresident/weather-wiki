@@ -4,6 +4,9 @@ $background-gradient: linear-gradient(to right, #6a11cb, #2575fc);
 $container-bg: rgba(255, 255, 255, 0.1);
 $font-family: Arial, sans-serif;
 $transition-speed: 0.3s;
+$gradient-day: linear-gradient(to right, #6a11cb, #2575fc);
+$gradient-night: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+
 
 * {
   box-sizing: border-box;
@@ -13,14 +16,55 @@ $transition-speed: 0.3s;
 
 body {
   font-family: $font-family;
-  background: $background-gradient;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   padding: 20px;
 }
+body.day {
+  background: $gradient-day;
+}
+
+body.night {
+  background: $gradient-night;
+}
+
+
+main {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-bottom: 30px;
+
+  .header-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $primary-color;
+    margin: 0;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    color: lighten(white, 30%);
+    margin: 0;
+  }
+}
+
 
 .container {
   background: $container-bg;
@@ -63,9 +107,13 @@ button {
 }
 
 .result {
-  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  border-left: 4px solid $primary-color;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: all 0.4s ease;
   
   &.show {
     opacity: 1;
@@ -105,6 +153,25 @@ footer {
     animation: spin 1s linear infinite;
     margin: 20px auto;
   }
+
+  .greeting {
+    margin-left: auto;
+    font-size: 1.2rem;
+    color: lighten(white, 20%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  
+    &::before {
+      content: "☀️";
+      font-size: 1.2rem;
+    }
+  
+    &.night::before {
+      content: "🌙";
+    }
+  }
+  
   
   @keyframes spin {
     0% { transform: rotate(0deg); }
@@ -117,5 +184,14 @@ footer {
 @media (max-width: 600px) {
   .container {
     padding: 15px;
+  }
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .greeting {
+    margin-left: 0;
   }
 }
